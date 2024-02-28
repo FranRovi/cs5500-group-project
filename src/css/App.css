@@ -7,10 +7,14 @@
   justify-content: space-between;
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
-  background-image: url('./background-image.png');
+  background-image: url('../images/background-image.png');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+}
+
+.page_title {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 header {
