@@ -2,6 +2,7 @@ import '../css/App.css';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
+import Navbar from './navbar';
 
 // TODO: Replace with openAi API output images.
 var placeholderImage = "https://t4.ftcdn.net/jpg/06/01/35/41/360_F_601354108_iVXhfu0CBWAmhqSuEtCd3MKuQ0AnfmA4.jpg";
@@ -9,6 +10,7 @@ var placeholderImage = "https://t4.ftcdn.net/jpg/06/01/35/41/360_F_601354108_iVX
 function Homepage(){
     return (
         <div className="App">
+            <Navbar /> {/* Include the Navbar component */}
             <header>
                 <h1 className="page_title">Pixel Creation</h1>
             </header>
