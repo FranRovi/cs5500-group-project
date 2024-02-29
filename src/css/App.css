@@ -74,6 +74,12 @@ header {
   color: white;
 }
 
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+}
+
 .App-link {
   color: #61dafb;
 }
