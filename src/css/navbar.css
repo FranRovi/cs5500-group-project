@@ -1,3 +1,8 @@
-.navbar {
-    justify-content: flex-start !important;
-}
+/* navbar.css */
+
+nav.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: transparent;
+  }

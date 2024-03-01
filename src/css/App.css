@@ -14,7 +14,9 @@
 }
 
 .page_title {
-  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(242, 237, 237);
 }
 
 header {
@@ -72,12 +74,6 @@ header {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.navbar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: left;
 }
 
 .App-link {
