@@ -5,11 +5,11 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 
-const apiKey = process.env.REACT_APP_API_KEY
+// const apiKey = process.env.REACT_APP_API_KEY
 // console.log(apiKey)
-// const openAi = new OpenAI({
-//     apiKey: process.env.REACT_APP_API_KEY, dangerouslyAllowBrowser: true
-// });
+const openai = new OpenAI({
+    apiKey: process.env.REACT_APP_API_KEY, dangerouslyAllowBrowser: true
+});
   
 // TODO: Replace with openAi API output images.
 // var placeholderImage = "https://t4.ftcdn.net/jpg/06/01/35/41/360_F_601354108_iVXhfu0CBWAmhqSuEtCd3MKuQ0AnfmA4.jpg";
@@ -34,18 +34,40 @@ function Homepage(){
     const numGenerator = (n) => {
         let randomNum = Math.floor(Math.random() * n) + 1
         return randomNum
-      }
+    }
       
-      const randomImageClickHandler = () => {
-        console.log("Clicking Random Button")
-        let key = numGenerator(Object.keys(imagesDict).length)
-        setPrompt(imagesDict[key])
+    const randomImageClickHandler = () => {
+    console.log("Clicking Random Button")
+    let key = numGenerator(Object.keys(imagesDict).length)
+    setPrompt(imagesDict[key])
+    console.log(prompt)
+    generateImage(image)
+    return
+    }
+
+    const imageFromInputClickHandler = (e) => {
+        console.log(e.target.value)
+        setPrompt(e.target.value)
         console.log(prompt)
-        // generateImage(image)
-        return
-      }
+        generateImage(image)
+    }
 
-
+    async function generateImage() {
+        try {
+            const response = await openai.images.generate({
+                // model: "dall-e-3",
+                prompt: prompt,
+                // n: 1,
+                // size: "256x256",
+            });
+            console.log(response.data)
+            console.log(response.data[0].url)
+            // console.log(response.data.data[0].url)
+            setImage(response.data[0].url)
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return (
         <div className="App">
@@ -55,8 +77,8 @@ function Homepage(){
             <section class="inputSection">
             <div class="input">
                 <Stack direction="row" spacing={2}>
-                <TextField id="filled-basic" label="What images do you want?" variant="filled" style={{ width: '70%' }} />
-                    <Button variant="outlined" style={{ color: 'black' }}>Generate Image</Button>
+                <TextField id="filled-basic" label="What images do you want?" variant="filled" style={{ width: '70%' }} onChange={(e) => setPrompt(e.target.value)} />
+                    <Button onClick={imageFromInputClickHandler} variant="outlined" style={{ color: 'black' }}>Generate Image</Button>
                 </Stack>
                 <Button className="m-3 h-50" onClick={randomImageClickHandler} variant="outlined" style={{ color: 'black' }}>Create Random Image</Button>
                 
