@@ -3,7 +3,10 @@ import Homepage from './components/homepage';
 import Navbar from './components/navbar';
 import Aboutus from './components/aboutus'
 
+
 function App() {
+
+
   return (
     <Router>
       <Navbar />
