@@ -22,6 +22,8 @@ function Homepage(){
     const imagesDict = {
         1: "Portrait of a face using cubism technique with blue background",
 
+        
+        // CREATE NEW PROMPTS FOR RAMDOM IMAGES
         // 1: "Astronaut Galaxy Planets Stars Spaceships Aliens",
         // 2: "Knight Castle Battle Bridge Moat Armies",
         // 3: "Machines Muscle Cars Robots Transformers",
@@ -37,18 +39,18 @@ function Homepage(){
     }
       
     const randomImageClickHandler = () => {
-    console.log("Clicking Random Button")
-    let key = numGenerator(Object.keys(imagesDict).length)
-    setPrompt(imagesDict[key])
-    console.log(prompt)
-    generateImage(image)
+        // console.log("Clicking Random Button")
+        let key = numGenerator(Object.keys(imagesDict).length)
+        setPrompt(imagesDict[key])
+        // console.log(prompt)
+        generateImage(image)
     return
     }
 
     const imageFromInputClickHandler = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setPrompt(e.target.value)
-        console.log(prompt)
+        // console.log(prompt)
         generateImage(image)
     }
 
@@ -60,8 +62,8 @@ function Homepage(){
                 // n: 1,
                 // size: "256x256",
             });
-            console.log(response.data)
-            console.log(response.data[0].url)
+            // console.log(response.data)
+            // console.log(response.data[0].url)
             // console.log(response.data.data[0].url)
             setImage(response.data[0].url)
         } catch (err) {
