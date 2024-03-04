@@ -62,9 +62,7 @@ function Homepage(){
                 // n: 1,
                 // size: "256x256",
             });
-            // console.log(response.data)
-            // console.log(response.data[0].url)
-            // console.log(response.data.data[0].url)
+            console.log(response.data[0].url)
             setImage(response.data[0].url)
         } catch (err) {
             console.log(err)
