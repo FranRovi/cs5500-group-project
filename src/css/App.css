@@ -20,7 +20,7 @@
 }
 
 header {
-  height: 150px;
+  height: 100px;
   display: flex;
   align-items: center;
 }
@@ -34,8 +34,8 @@ header {
 }
 
 .imageSection img {
-  width: 45%;
-  height: 30%;
+  width: 60%;
+  height: 60%;
   margin-bottom: 25px;
 }
 
@@ -44,7 +44,7 @@ header {
   display: flex;
   justify-content: center;
   height: 150px;
-  margin-top: auto;
+  margin-bottom: 20px;
 }
 
 .input {
