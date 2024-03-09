@@ -16,7 +16,9 @@
 .page_title {
   font-style: italic;
   font-weight: bold;
-  color: rgb(242, 237, 237);
+  /* color: rgb(242, 237, 237); */
+  /* color: black; */
+
 }
 
 header {

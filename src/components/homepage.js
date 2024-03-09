@@ -1,4 +1,5 @@
-import { useState } from 'react'; 
+import { useState } from 'react';
+import { useTranslation } from "react-i18next"; 
 import OpenAI from 'openai';
 import '../css/App.css';
 import Button from '@mui/material/Button';
@@ -11,11 +12,24 @@ const openai = new OpenAI({
 });
 
 function Homepage(){
+    const [language, setLanguage] = useState('English')
+    const [t, i18n] = useTranslation("global")
     const [image, setImage] = useState(""); // Initialize image state with an empty string
     const [prompt, setPrompt] = useState("");
 
+    const changeLanguageHandler = () => {
+        if (language === 'English') {
+            setLanguage('Español')
+            i18n.changeLanguage('es')
+        } else {
+            setLanguage('English')
+            i18n.changeLanguage('en')
+        }
+    }
+
     const imagesDict = {
         1: "Portrait of a face using cubism technique with blue background",
+        1: "Horse galloping in the woods at sunset",
         // Other prompts...
     };
 
@@ -58,17 +72,22 @@ function Homepage(){
 
     return (
         <div className="App">
-            <header>
-                <h1 className="page_title">Pixel Creation</h1>
+            <header className="row">
+                <div className="col-10">
+                    <h1 className="page_title">Pixel Creation</h1>
+                </div>
+                <div className="col-2">
+                    <button className="btn btn-outline-dark" onClick={changeLanguageHandler}>{t("languageButton")}</button>
+                </div>
             </header>
             <section className="inputSection">
                 <div className="input">
                     <Stack direction="row" spacing={2}>
-                        <TextField id="filled-basic" label="What images do you want?" variant="filled" style={{ width: '70%' }} onChange={(e) => setPrompt(e.target.value)} />
-                        <Button onClick={imageFromInputClickHandler} variant="outlined" style={{ color: 'black' }}>Generate Image</Button>
+                        <TextField id="filled-basic" label={t("whatImagesDoYouWantToCreate")} variant="filled" style={{ width: '70%' }} onChange={(e) => setPrompt(e.target.value)} />
+                        <Button onClick={imageFromInputClickHandler} variant="outlined" style={{ color: 'black' }}>{t("generateImage")}</Button>
                     </Stack>
-                    <Button className="m-3 h-50" onClick={randomImageClickHandler} variant="outlined" style={{ color: 'black' }}>Create Random Image</Button>
-                    <Button onClick={downloadImage} variant="outlined" style={{ color: 'black' }}>Download Image</Button>
+                    <Button className="mt-4 me-1" onClick={randomImageClickHandler} variant="outlined" style={{ color: 'black' }}>{t("createRandomImage")}</Button>
+                    <Button className="mt-4 ms-1" onClick={downloadImage} variant="outlined" style={{ color: 'black' }}>{t("downloadImage")}</Button>
                 </div>
             </section>
             <section className="mt-2 imageSection">
