@@ -111,7 +111,7 @@ function Homepage(){
         <div className="App">
             <header className="row">
                 <div className="col-10">
-                    <h1 className="page_title">{t("page_title")}</h1>
+                    <h1 className="page_title">{t("pixel creation")}</h1>
                 </div>
                 <div className="col-2">
                     <button className="btn btn-outline-dark" onClick={changeLanguageHandler}>{language}</button>
