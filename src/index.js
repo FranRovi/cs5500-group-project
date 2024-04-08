@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import global_en from "../src/components/lang/locales/en/global.json";
 import global_es from "../src/components/lang/locales/es/global.json";
+import global_pt from "../src/components/lang/locales/pt/global.json";
 import i18next from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 
@@ -17,6 +18,9 @@ i18next.init({
     },
     es: {
       global: global_es,
+    },
+    pt: {
+      global: global_pt,
     },
   },
 });
