@@ -5,7 +5,6 @@ import Homepage from '../components/homepage';
 describe('Homepage filter buttons', () => {
 
     test('renders five filter buttons', () => {
-
         render(<Homepage />);
 
         // Define the expected filter button texts
