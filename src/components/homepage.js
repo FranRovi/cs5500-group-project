@@ -20,47 +20,24 @@ function Homepage(){
     const [filter, setFilter] = useState(""); // State to handle CSS filters
 
     const changeLanguageHandler = (e) => {
-        console.log(language)
+        // console.log("Button Clicked")
+        // console.log(language)
         const newLanguage = e.target.innerText
+        // const newLanguage = e.target.value
         if (newLanguage === 'English') {
             setLanguage('English')
             i18n.changeLanguage('en')
-            console.log(language)
+            // console.log(language)
         } else if (newLanguage === 'Español') {
             setLanguage('Español')
             i18n.changeLanguage('es')
-            console.log(language)
+            // console.log(language)
         }else {
             setLanguage('Português')
             i18n.changeLanguage('pt')
-            console.log(language)
+            // console.log(language)
         }
-
-        // const newLanguage = language === 'English' ? 'es' : 'en';
-        // setLanguage(newLanguage === 'es' ? 'Español' : 'English');
-        // i18n.changeLanguage(newLanguage);
     };
-
-    // const printEObject = (e) => {
-        // // eChar = char(234)
-        // languageDict = {
-        //     "English" : "en",
-        //     "Spanish" : "es",
-        //     "Portuguese" : "pt",
-        //     "Ingles" : "en",
-        //     "Espanol" : "es",
-        //     "Portugues" : "it",
-        //     "Ingleish" : "en",
-        //     "Espanhol" : "es",
-        //     "Portugueish" : "pt"
-        // }
-        
-        // console.log(e)
-    //     const newLanguage = e.target.innerText
-    //     console.log(newLanguage)
-
-
-    // }
 
     function generatePrompts() {
         const themes = [
@@ -152,26 +129,24 @@ function Homepage(){
                     <h1 className="page_title">{t("pixel creation")}</h1>
                 </div>
                 <div className="col-2">
+                    {/* <select className='form-select mb-3' style={{ width: 150 }} data-testid ='languageBtn' id='selectLanguage' onChange={(e)=> changeLanguageHandler(e)}>    
+                        <option>English</option>    
+                        <option role="option-1">Español</option>    
+                        <option role="option-2">Español</option>    
+                        <option role="option-3">Português</option>
+                    </select> */}
                 <Dropdown>
-                    <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                    <Dropdown.Toggle variant="primary" data-testid ='languageBtn' id="dropdown-basic">
                     {t("languageButton")}
+                    {/* <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                    English */}
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu>
                         <Dropdown.Item href="" onClick={(e)=>changeLanguageHandler(e)}>English</Dropdown.Item>
                         <Dropdown.Item href="" onClick={(e)=>changeLanguageHandler(e)}>Español</Dropdown.Item>
                         <Dropdown.Item href="" onClick={(e)=>changeLanguageHandler(e)}>Português</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                    {/* <div className="dropdown">
-                        <button>Language</button>
-                        <div className="content">
-                            <a href="" onClick={(e) => {printEObject(e)} }>English </a>
-                            <a href="" onClick={(e) => {printEObject(e)} }>Spanish</a>
-                            <a href="" onClick={(e) => {printEObject(e)} }>Italian</a>
-                        </div>
-                    </div> */}
-                    {/* <button className="btn btn-outline-dark" onClick={changeLanguageHandler}>{language}</button> */}
                 </div>
             </header>
             <section className="inputSection">
