@@ -16,7 +16,7 @@
 .page_title {
   font-style: italic;
   font-weight: bold;
-  /* color: rgb(242, 237, 237); */
+  color: rgb(242, 237, 237);
   /* color: black; */
 
 }
@@ -39,6 +39,7 @@ header {
   width: 60%;
   height: 60%;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .inputSection {
@@ -103,6 +104,10 @@ header {
   height: 40vmin;
   pointer-events: none;
 }
+
+/* .color_title {
+  color: #575957
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

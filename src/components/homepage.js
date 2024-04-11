@@ -20,23 +20,18 @@ function Homepage(){
     const [filter, setFilter] = useState(""); // State to handle CSS filters
 
     const changeLanguageHandler = (e) => {
-        // console.log("Button Clicked")
-        // console.log(language)
         const newLanguage = e.target.innerText
-        // const newLanguage = e.target.value
         if (newLanguage === 'English') {
             setLanguage('English')
             i18n.changeLanguage('en')
-            // console.log(language)
         } else if (newLanguage === 'Español') {
             setLanguage('Español')
             i18n.changeLanguage('es')
-            // console.log(language)
         }else {
             setLanguage('Português')
             i18n.changeLanguage('pt')
-            // console.log(language)
         }
+        console.log(language)
     };
 
     function generatePrompts() {
@@ -126,7 +121,8 @@ function Homepage(){
         <div className="App">
             <header className="row">
                 <div className="col-10">
-                    <h1 className="page_title">{t("pixel creation")}</h1>
+                    {/* <h1 className="page_title color_title">{t("pixel creation")}</h1> */}
+                    <h1 className="page_title text-white">Pixel Creation</h1>
                 </div>
                 <div className="col-2">
                     {/* <select className='form-select mb-3' style={{ width: 150 }} data-testid ='languageBtn' id='selectLanguage' onChange={(e)=> changeLanguageHandler(e)}>    
@@ -166,7 +162,7 @@ function Homepage(){
                     <Button className="mt-4 ms-1" onClick={downloadImage} variant="outlined" style={{ color: 'black' }}>{t("downloadImage")}</Button>
                     {/* Buttons for applying filters */}
                     <div className="filter-buttons mt-4">
-                        <p>Apply Filters</p>
+                        <p className="h2 fw-bold fst-italic text-white">Apply Filters</p>
                         {Object.keys(filters).map(filterName => (
                             <Button className="mt-2 me-1" style={{ color: 'black' }} key={filterName} onClick={() => applyFilter(filterName)} variant="outlined">
                                 {filterName.charAt(0).toUpperCase() + filterName.slice(1)}
@@ -175,7 +171,7 @@ function Homepage(){
                     </div>
                 </div>
             </section>
-            <section className="mt-2 imageSection">
+            <section className="mt-5 imageSection">
                 {/* Apply the CSS filter to the image */}
                 {image && <img src={image} alt="Generated" style={{ filter }} />}
             </section>
