@@ -1,0 +1,13 @@
+Pixel Creation - QA Document
+
+All of our test cases are under the src folder under tests. Below are all the explanations regarding our test cases and how they work. 
+
+Before running the test cases, please install jtest which can be done by running “npm install” 
+
+Drop down menu - test cases were written to test if the drop down menu renders. This is important because it improves the user functionality and makes navigating our website easier.
+
+Filter button test - test cases were written to test if the filter button renders. This is a key component of our product because we use AI to generate art but we have our custom filters. These test cases test if the button render and works for the user.
+
+About us test - Multiple test cases were written to test if the about us page is working properly. It tests if the page title is rendered and if the content is also rendered. Also it tests the structure to make sure all divs and containers are in their proper place.
+
+Navbar test - This test is to test if the navbar is present in our front end. Since it is a bootstrap template, it is important to test if it renders.
