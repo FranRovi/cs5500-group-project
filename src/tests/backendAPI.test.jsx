@@ -2,10 +2,10 @@ import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/re
 import '@testing-library/jest-dom';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({ 
-  apiKey: "Enter your OpenAI API Key for testing",
-  dangerouslyAllowBrowser: true,
-});
+// const openai = new OpenAI({ 
+//   apiKey: "Enter your OpenAI API Key for testing",
+//   dangerouslyAllowBrowser: true,
+// });
 
 jest.setTimeout(50000); 
 
