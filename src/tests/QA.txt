@@ -11,3 +11,5 @@ Filter button test - test cases were written to test if the filter button render
 About us test - Multiple test cases were written to test if the about us page is working properly. It tests if the page title is rendered and if the content is also rendered. Also it tests the structure to make sure all divs and containers are in their proper place.
 
 Navbar test - This test is to test if the navbar is present in our front end. Since it is a bootstrap template, it is important to test if it renders.
+
+backendAPI test - This test uses the OpenAI API to generate an image based on a given prompt ("Portrait of a face using cubism technique with blue background"), and it checks if the response contains a valid URL for the generated image, indicating a successful API call and image generation.
