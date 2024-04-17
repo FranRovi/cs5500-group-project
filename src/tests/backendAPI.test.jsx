@@ -3,11 +3,11 @@ import '@testing-library/jest-dom';
 import OpenAI from 'openai';
 
 const openai = new OpenAI({ 
-  apiKey: "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",
+  apiKey: "Enter your OpenAI API Key for testing",
   dangerouslyAllowBrowser: true,
 });
 
-jest.setTimeout(10000); 
+jest.setTimeout(50000); 
 
 describe('Backend API Test', () => {
   afterEach(cleanup); 
