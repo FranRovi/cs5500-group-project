@@ -16,3 +16,4 @@ API Key: This project uses openAI image API and requires a personal API key. use
 Running the Program: Type "npm start" on the terminal to launch our app!
 
 # Demo
+https://github.com/aiC0ld/cs5500-group-project/assets/110158940/108f1491-ef4f-40fe-8bcb-76bdc5dcc3b4
